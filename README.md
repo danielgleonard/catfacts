@@ -1,4 +1,4 @@
-catfacts
+Cat Facts
 ========
 
-Uses Google Voice and other secret stuff
+Uses Google Voice to send text messages
