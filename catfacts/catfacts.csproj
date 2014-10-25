@@ -32,6 +32,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libraries\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpVoice, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libraries\SharpVoice.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -50,6 +58,16 @@
   <ItemGroup>
     <Content Include="libraries\Newtonsoft.Json.dll" />
     <Content Include="libraries\SharpVoice.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Google.Voice.Service\Google.Voice.csproj">
+      <Project>{5391a007-087e-4bff-8101-6f53f3220e61}</Project>
+      <Name>Google.Voice</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GoogleVoice.NET\GoogleVoice.NET.csproj">
+      <Project>{8d48cfe5-66e8-4287-86a5-bf631ac9fd24}</Project>
+      <Name>GoogleVoice.NET</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
