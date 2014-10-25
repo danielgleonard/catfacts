@@ -1,0 +1,275 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Google.Voice.Service</name>
+    </assembly>
+    <members>
+        <member name="M:Google.Voice.Extensions.Methods.Dump(System.Object,System.Int32)">
+            <summary>
+            Dumps object data into a string
+            </summary>
+            <param name="object"></param>
+            <param name="recursion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Google.Voice.Extensions.Methods.MD5(System.String)">
+            <summary>
+            Generates the MD5 of the supplied text
+            </summary>
+        </member>
+        <member name="M:Google.Voice.Extensions.Methods.Base64Decode(System.String)">
+            <summary>
+            Base64 decryption method
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Google.Voice.Extensions.Methods.Base64Encode(System.String)">
+            <summary>
+            Base64 encryption method
+            </summary>
+            <param name="string"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Google.Voice.Extensions.Methods.Encrypt(System.String,System.String,System.String,System.String,System.String,System.Int32,System.Int32)">
+            <param name="string">Text to encrypt</param>
+            <param name="passPhrase">Password to aid in encryption</param>
+            <returns>Returns the encrypted value of a plaintext string</returns>
+        </member>
+        <member name="M:Google.Voice.Extensions.Methods.Decrypt(System.String,System.String,System.String,System.String,System.String,System.Int32,System.Int32)">
+            <param name="string">Text to decrypt</param>
+            <param name="passPhrase">Password to aid in decryption</param>
+            <returns>The decrypted representation of an encrypted string</returns>
+        </member>
+        <member name="M:Google.Voice.Extensions.Methods.ToObject``1(System.String)">
+            <summary>
+            Deserializes a JSON string into an object of type T
+            </summary>
+        </member>
+        <member name="M:Google.Voice.Extensions.Methods.ToObject``1(System.String,Newtonsoft.Json.JsonSerializerSettings)">
+            <summary>
+            Deserializes a JSON string into an object of type T
+            </summary>
+        </member>
+        <member name="M:Google.Voice.Extensions.Methods.ToObject``1(System.String,Newtonsoft.Json.JsonConverter[])">
+            <summary>
+            Deserializes a JSON string into an object of type T
+            </summary>
+        </member>
+        <member name="M:Google.Voice.Extensions.Methods.ToJson(System.Object)">
+            <summary>
+            Serializes an object into a JSON string
+            </summary>
+        </member>
+        <member name="M:Google.Voice.Extensions.Methods.ToJson(System.Object,Newtonsoft.Json.Formatting)">
+            <summary>
+            Serializes an object into a JSON string
+            </summary>
+        </member>
+        <member name="M:Google.Voice.Extensions.Methods.ToJson(System.Object,Newtonsoft.Json.JsonConverter[])">
+            <summary>
+            Serializes an object into a JSON string
+            </summary>
+        </member>
+        <member name="M:Google.Voice.Extensions.Methods.ToJson(System.Object,Newtonsoft.Json.Formatting,Newtonsoft.Json.JsonConverter[])">
+            <summary>
+            Serializes an object into a JSON string
+            </summary>
+        </member>
+        <member name="M:Google.Voice.Extensions.Methods.ToJson(System.Object,Newtonsoft.Json.Formatting,Newtonsoft.Json.JsonSerializerSettings)">
+            <summary>
+            Serializes an object into a JSON string
+            </summary>
+        </member>
+        <member name="M:Google.Voice.GoogleVoice.#ctor">
+            <summary>
+            Creates a new instance of the GoogleVoice service 
+            </summary>
+        </member>
+        <member name="M:Google.Voice.GoogleVoice.GenerateUrl(System.String)">
+            <summary>
+            Generates a URL that corresponds to the correct web service endpoint
+            on Google Voice; this method returns a URL based on the calling method or the supplied 
+            parameter
+            </summary>
+        </member>
+        <member name="M:Google.Voice.GoogleVoice.CheckRelogin(Google.Voice.Web.IGVRequestResult,Google.Voice.Result)">
+            <summary>
+            Checks the IGVRequestResult
+            </summary>
+        </member>
+        <member name="M:Google.Voice.GoogleVoice.Login(System.String,System.String)">
+            <summary>
+            Performs a login to Google Voice
+            </summary>
+        </member>
+        <member name="M:Google.Voice.GoogleVoice.ExecuteLogin(System.String,System.String,Google.Voice.VariableCollection)">
+            <summary>
+            Executes the secondary process of POSTing login credentials 
+            </summary>
+            <param name="emailAddress"></param>
+            <param name="password"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Google.Voice.GoogleVoice.ExecuteRelogin">
+            <summary>
+            Re-logins to the Google Voice service
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Google.Voice.GoogleVoice.ReloginAnd``1(``0@,System.Reflection.MethodBase,System.Object[])">
+            <summary>
+            Re-logins to the Google Voice service and executes a request
+            </summary>
+            <typeparam name="T">Type of object to return</typeparam>
+            <param name="result">The object to return</param>
+            <param name="method">Method to execute that returns the object</param>
+            <param name="parameters">Parameters to provide to the object</param>
+        </member>
+        <member name="M:Google.Voice.GoogleVoice.ReloginAnd``1(``0@,System.Object[])">
+            <summary>
+            Re-logins to the Google Voice service and executes a request
+            </summary>
+            <typeparam name="T">Type of object to return</typeparam>
+            <param name="result">The object to return</param>
+            <param name="parameters">Parameters to provide to the object</param>
+        </member>
+        <member name="M:Google.Voice.GoogleVoice.GenerateParameters(System.Nullable{System.UInt32})">
+            <summary>
+            Generates generic parameters based on supplied parameter data
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Google.Voice.GoogleVoice.SMS(System.String,System.String)">
+            <summary>
+            Sends a SMS message to the destination phone number with the specified message
+            </summary>
+        </member>
+        <member name="M:Google.Voice.GoogleVoice.Call(System.String,System.String)">
+            <summary>
+            Initiates a call to the destination phone number from the local phone
+            </summary>
+        </member>
+        <member name="M:Google.Voice.GoogleVoice.GetContacts(System.Boolean)">
+            <summary>
+            Retrieves a collection of contacts
+            </summary>
+            <param name="reload">Reload all contacts from the server</param>
+        </member>
+        <member name="M:Google.Voice.GoogleVoice.Search(System.String,System.Nullable{System.UInt32})">
+            <summary>
+            Performs a search for the specified term
+            </summary>
+            <param name="pageNumber">Page number to retrieve</param>
+        </member>
+        <member name="M:Google.Voice.GoogleVoice.Inbox(System.Nullable{System.UInt32},System.String,System.Boolean)">
+            <summary>
+            Retrieves the Inbox folder
+            </summary>
+            <param name="pageNumber">Page number to retrieve</param>
+            <param name="urlOverride">URL override, if retrieving from a different location</param>
+        </member>
+        <member name="M:Google.Voice.GoogleVoice.Starred(System.Nullable{System.UInt32},System.Boolean)">
+            <summary>
+            Retrieves the Starred folder
+            </summary>
+            <param name="pageNumber">Page number to retrieve</param>
+        </member>
+        <member name="M:Google.Voice.GoogleVoice.Spam(System.Nullable{System.UInt32},System.Boolean)">
+            <summary>
+            Retrieves the Starred folder
+            </summary>
+            <param name="pageNumber">Page number to retrieve</param>
+        </member>
+        <member name="M:Google.Voice.GoogleVoice.Trash(System.Nullable{System.UInt32},System.Boolean)">
+            <summary>
+            Retrieves the Trash folder
+            </summary>
+            <param name="pageNumber">Page number to retrieve</param>
+        </member>
+        <member name="M:Google.Voice.GoogleVoice.History(System.Nullable{System.UInt32},System.Boolean)">
+            <summary>
+            Retrieves the History folder
+            </summary>
+            <param name="pageNumber">Page number to retrieve</param>
+        </member>
+        <member name="M:Google.Voice.GoogleVoice.Voicemail(System.Nullable{System.UInt32},System.Boolean)">
+            <summary>
+            Retrieves the Voicemail folder
+            </summary>
+            <param name="pageNumber">Page number to retrieve</param>
+        </member>
+        <member name="M:Google.Voice.GoogleVoice.Texts(System.Nullable{System.UInt32},System.Boolean)">
+            <summary>
+            Retrieves the Texts/SMS folder
+            </summary>
+            <param name="pageNumber">Page number to retrieve</param>
+        </member>
+        <member name="M:Google.Voice.GoogleVoice.SMS(System.Nullable{System.UInt32},System.Boolean)">
+            <summary>
+            Retrieves the Texts/SMS folder
+            </summary>
+            <param name="pageNumber">Page number to retrieve</param>
+        </member>
+        <member name="M:Google.Voice.GoogleVoice.Recorded(System.Nullable{System.UInt32},System.Boolean)">
+            <summary>
+            Retrieves the Recorded folder
+            </summary>
+            <param name="pageNumber">Page number to retrieve</param>
+        </member>
+        <member name="M:Google.Voice.GoogleVoice.Placed(System.Nullable{System.UInt32},System.Boolean)">
+            <summary>
+            Retrieves the Placed folder
+            </summary>
+            <param name="pageNumber">Page number to retrieve</param>
+        </member>
+        <member name="M:Google.Voice.GoogleVoice.Missed(System.Nullable{System.UInt32},System.Boolean)">
+            <summary>
+            Retrieves the Missed folder
+            </summary>
+            <param name="pageNumber">Page number to retrieve</param>
+        </member>
+        <member name="M:Google.Voice.GoogleVoice.Received(System.Nullable{System.UInt32},System.Boolean)">
+            <summary>
+            Retrieves the Received folder
+            </summary>
+            <param name="pageNumber">Page number to retrieve</param>
+        </member>
+        <member name="P:Google.Voice.GoogleVoice.WebClient">
+            <summary>
+            WebClient object used when making requests to Google Voice
+            </summary>
+        </member>
+        <member name="P:Google.Voice.GoogleVoice.GALX">
+            <summary>
+            GALX data provided by Google
+            </summary>
+        </member>
+        <member name="P:Google.Voice.GoogleVoice.Session">
+            <summary>
+            Session ID data provided by Google
+            </summary>
+        </member>
+        <member name="P:Google.Voice.GoogleVoice.LoginParameters">
+            <summary>
+            Login parameters used for login requests
+            </summary>
+        </member>
+        <member name="P:Google.Voice.Entities.PhoneNumber.raw">
+            <summary>
+            Raw phone number
+            </summary>
+        </member>
+        <member name="P:Google.Voice.Entities.PhoneNumber.formatted">
+            <summary>
+            Formatted phone number
+            </summary>
+        </member>
+        <member name="P:Google.Voice.Entities.PhoneNumber.dnd">
+            <summary>
+            Flag for "DO-NOT-DISTURB"
+            </summary>
+        </member>
+    </members>
+</doc>
