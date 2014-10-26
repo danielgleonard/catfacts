@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace catfacts
 {
-    class Program
+    class CatFacts
     {
         private static Sender messageSender;
 
@@ -25,7 +25,7 @@ namespace catfacts
             // Run the stuff
             messageSender = new Sender();
             messageSender.GetCredentials();
-            messageSender.
+            
         }
     }
 }
