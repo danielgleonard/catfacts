@@ -8,6 +8,8 @@ namespace catfacts
 {
     class Program
     {
+        private static Sender messageSender;
+
         static void Main(string[] args)
         {
             // Set color of console
@@ -19,6 +21,11 @@ namespace catfacts
             Console.WriteLine("===================");
             Console.WriteLine("by CombustibleLemon");
             Console.Write("\n\n\n");
+
+            // Run the stuff
+            messageSender = new Sender();
+            messageSender.GetCredentials();
+            messageSender.
         }
     }
 }

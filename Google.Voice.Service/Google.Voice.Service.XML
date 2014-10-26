@@ -4,81 +4,19 @@
         <name>Google.Voice.Service</name>
     </assembly>
     <members>
-        <member name="M:Google.Voice.Extensions.Methods.Dump(System.Object,System.Int32)">
+        <member name="P:Google.Voice.Entities.PhoneNumber.raw">
             <summary>
-            Dumps object data into a string
-            </summary>
-            <param name="object"></param>
-            <param name="recursion"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Google.Voice.Extensions.Methods.MD5(System.String)">
-            <summary>
-            Generates the MD5 of the supplied text
+            Raw phone number
             </summary>
         </member>
-        <member name="M:Google.Voice.Extensions.Methods.Base64Decode(System.String)">
+        <member name="P:Google.Voice.Entities.PhoneNumber.formatted">
             <summary>
-            Base64 decryption method
-            </summary>
-            <param name="data"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Google.Voice.Extensions.Methods.Base64Encode(System.String)">
-            <summary>
-            Base64 encryption method
-            </summary>
-            <param name="string"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Google.Voice.Extensions.Methods.Encrypt(System.String,System.String,System.String,System.String,System.String,System.Int32,System.Int32)">
-            <param name="string">Text to encrypt</param>
-            <param name="passPhrase">Password to aid in encryption</param>
-            <returns>Returns the encrypted value of a plaintext string</returns>
-        </member>
-        <member name="M:Google.Voice.Extensions.Methods.Decrypt(System.String,System.String,System.String,System.String,System.String,System.Int32,System.Int32)">
-            <param name="string">Text to decrypt</param>
-            <param name="passPhrase">Password to aid in decryption</param>
-            <returns>The decrypted representation of an encrypted string</returns>
-        </member>
-        <member name="M:Google.Voice.Extensions.Methods.ToObject``1(System.String)">
-            <summary>
-            Deserializes a JSON string into an object of type T
+            Formatted phone number
             </summary>
         </member>
-        <member name="M:Google.Voice.Extensions.Methods.ToObject``1(System.String,Newtonsoft.Json.JsonSerializerSettings)">
+        <member name="P:Google.Voice.Entities.PhoneNumber.dnd">
             <summary>
-            Deserializes a JSON string into an object of type T
-            </summary>
-        </member>
-        <member name="M:Google.Voice.Extensions.Methods.ToObject``1(System.String,Newtonsoft.Json.JsonConverter[])">
-            <summary>
-            Deserializes a JSON string into an object of type T
-            </summary>
-        </member>
-        <member name="M:Google.Voice.Extensions.Methods.ToJson(System.Object)">
-            <summary>
-            Serializes an object into a JSON string
-            </summary>
-        </member>
-        <member name="M:Google.Voice.Extensions.Methods.ToJson(System.Object,Newtonsoft.Json.Formatting)">
-            <summary>
-            Serializes an object into a JSON string
-            </summary>
-        </member>
-        <member name="M:Google.Voice.Extensions.Methods.ToJson(System.Object,Newtonsoft.Json.JsonConverter[])">
-            <summary>
-            Serializes an object into a JSON string
-            </summary>
-        </member>
-        <member name="M:Google.Voice.Extensions.Methods.ToJson(System.Object,Newtonsoft.Json.Formatting,Newtonsoft.Json.JsonConverter[])">
-            <summary>
-            Serializes an object into a JSON string
-            </summary>
-        </member>
-        <member name="M:Google.Voice.Extensions.Methods.ToJson(System.Object,Newtonsoft.Json.Formatting,Newtonsoft.Json.JsonSerializerSettings)">
-            <summary>
-            Serializes an object into a JSON string
+            Flag for "DO-NOT-DISTURB"
             </summary>
         </member>
         <member name="M:Google.Voice.GoogleVoice.#ctor">
@@ -256,19 +194,81 @@
             Login parameters used for login requests
             </summary>
         </member>
-        <member name="P:Google.Voice.Entities.PhoneNumber.raw">
+        <member name="M:Google.Voice.Extensions.Methods.Dump(System.Object,System.Int32)">
             <summary>
-            Raw phone number
+            Dumps object data into a string
+            </summary>
+            <param name="object"></param>
+            <param name="recursion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Google.Voice.Extensions.Methods.MD5(System.String)">
+            <summary>
+            Generates the MD5 of the supplied text
             </summary>
         </member>
-        <member name="P:Google.Voice.Entities.PhoneNumber.formatted">
+        <member name="M:Google.Voice.Extensions.Methods.Base64Decode(System.String)">
             <summary>
-            Formatted phone number
+            Base64 decryption method
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Google.Voice.Extensions.Methods.Base64Encode(System.String)">
+            <summary>
+            Base64 encryption method
+            </summary>
+            <param name="string"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Google.Voice.Extensions.Methods.Encrypt(System.String,System.String,System.String,System.String,System.String,System.Int32,System.Int32)">
+            <param name="string">Text to encrypt</param>
+            <param name="passPhrase">Password to aid in encryption</param>
+            <returns>Returns the encrypted value of a plaintext string</returns>
+        </member>
+        <member name="M:Google.Voice.Extensions.Methods.Decrypt(System.String,System.String,System.String,System.String,System.String,System.Int32,System.Int32)">
+            <param name="string">Text to decrypt</param>
+            <param name="passPhrase">Password to aid in decryption</param>
+            <returns>The decrypted representation of an encrypted string</returns>
+        </member>
+        <member name="M:Google.Voice.Extensions.Methods.ToObject``1(System.String)">
+            <summary>
+            Deserializes a JSON string into an object of type T
             </summary>
         </member>
-        <member name="P:Google.Voice.Entities.PhoneNumber.dnd">
+        <member name="M:Google.Voice.Extensions.Methods.ToObject``1(System.String,Newtonsoft.Json.JsonSerializerSettings)">
             <summary>
-            Flag for "DO-NOT-DISTURB"
+            Deserializes a JSON string into an object of type T
+            </summary>
+        </member>
+        <member name="M:Google.Voice.Extensions.Methods.ToObject``1(System.String,Newtonsoft.Json.JsonConverter[])">
+            <summary>
+            Deserializes a JSON string into an object of type T
+            </summary>
+        </member>
+        <member name="M:Google.Voice.Extensions.Methods.ToJson(System.Object)">
+            <summary>
+            Serializes an object into a JSON string
+            </summary>
+        </member>
+        <member name="M:Google.Voice.Extensions.Methods.ToJson(System.Object,Newtonsoft.Json.Formatting)">
+            <summary>
+            Serializes an object into a JSON string
+            </summary>
+        </member>
+        <member name="M:Google.Voice.Extensions.Methods.ToJson(System.Object,Newtonsoft.Json.JsonConverter[])">
+            <summary>
+            Serializes an object into a JSON string
+            </summary>
+        </member>
+        <member name="M:Google.Voice.Extensions.Methods.ToJson(System.Object,Newtonsoft.Json.Formatting,Newtonsoft.Json.JsonConverter[])">
+            <summary>
+            Serializes an object into a JSON string
+            </summary>
+        </member>
+        <member name="M:Google.Voice.Extensions.Methods.ToJson(System.Object,Newtonsoft.Json.Formatting,Newtonsoft.Json.JsonSerializerSettings)">
+            <summary>
+            Serializes an object into a JSON string
             </summary>
         </member>
     </members>

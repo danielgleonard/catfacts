@@ -13,7 +13,9 @@ namespace catfacts
 
         private string  debugUsername   =   "crazyworkoutkid";
 
-        public void ConsoleLogin()
+        public Sender() { }
+
+        public void GetCredentials()
         {
             // Get the username
             Console.Write("Username: ");
@@ -29,6 +31,11 @@ namespace catfacts
             // Get the password
             Console.Write("Password: ");
             Password = Console.ReadLine();
+        }
+
+        public void Authenticate()
+        {
+            
         }
     }
 }
