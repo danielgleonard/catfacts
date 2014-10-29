@@ -9,8 +9,8 @@ namespace catfacts
 {
     class Sender
     {
-        public  string  Username    { get; set; }
-        public  string  Password    { get; set; }
+        public  string  Username        { get; set; }
+        public  string  Password        { get; set; }
 
         private string  debugUsername   =   "crazyworkoutkid";
 
@@ -36,7 +36,22 @@ namespace catfacts
 
         public void Authenticate()
         {
+            var loginResult = Program.GoogleVoice.Login(Username, Password);
 
+            if (!loginResult.RequiresRelogin)
+            {
+
+                if (!Settings.Default.EmailCache.Contains(Username))
+                {
+                    Settings.Default.EmailCache.Add(Username);
+                    Settings.Default.Save();
+                }
+                return;
+            }
+            else
+            {
+                Console.WriteLine("That's not your password, dumbass!");
+            }
         }
     }
 }
