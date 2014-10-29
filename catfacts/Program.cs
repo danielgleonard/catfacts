@@ -15,8 +15,10 @@ namespace catfacts
             // Set color of console
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.Green;
+            Console.Beep(10000, 2000);
 
             // Display title
+            Console.Title = "CatFacts";
             Console.WriteLine("     CAT FACTS     ");
             Console.WriteLine("===================");
             Console.WriteLine("by CombustibleLemon");
