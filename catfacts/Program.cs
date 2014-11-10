@@ -27,13 +27,6 @@ namespace catfacts
             // Run the stuff
             messageSender = new Sender();
             messageSender.GetCredentials();
-
-            test();
-        }
-
-        static void test()
-        {
-
         }
     }
 }
