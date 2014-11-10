@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using GoogleVoice.NET;
+using Google.Voice;
 
 namespace catfacts
 {
@@ -36,7 +36,7 @@ namespace catfacts
 
         public void Authenticate()
         {
-            var loginResult = Program.GoogleVoice.Login(Username, Password);
+            Google.Voice.Web.LoginResult loginResult = Program.GoogleVoice.Login(Username, Password);
 
             if (!loginResult.RequiresRelogin)
             {
