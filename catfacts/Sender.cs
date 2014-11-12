@@ -37,12 +37,17 @@ namespace catfacts
 
         public void Authenticate()
         {
+            // Got this from the example code
             Google.Voice.Web.LoginResult loginResult = Voice.Login(Username, Password);
 
+            // If there's an error, throw an exception
             if (loginResult.RequiresRelogin)
             {
                 throw new Exception("The username or password was incorrect");
             }
+            
+            // Remove the password string from memory
+            Password = "";
         }
     }
 }
