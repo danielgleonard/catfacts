@@ -13,6 +13,7 @@ namespace catfacts
         public  string  Password        { get; set; }
 
         private string  debugUsername   =   "crazyworkoutkid";
+        public static Google.Voice.GoogleVoice Voice { get; set; }
 
         public Sender() { }
 
@@ -36,22 +37,7 @@ namespace catfacts
 
         public void Authenticate()
         {
-            Google.Voice.Web.LoginResult loginResult = Program.GoogleVoice.Login(Username, Password);
-
-            if (!loginResult.RequiresRelogin)
-            {
-
-                if (!Settings.Default.EmailCache.Contains(Username))
-                {
-                    Settings.Default.EmailCache.Add(Username);
-                    Settings.Default.Save();
-                }
-                return;
-            }
-            else
-            {
-                Console.WriteLine("That's not your password, dumbass!");
-            }
+            Google.Voice.Web.LoginResult loginResult = Voice.Login(Username, Password);
         }
     }
 }
