@@ -26,7 +26,7 @@ namespace catfacts
 
             // Run the stuff
             messageSender = new Sender();
-            messageSender.GetCredentials();
+            messageSender.GetCredentialsFromConsole();
         }
     }
 }

@@ -17,7 +17,7 @@ namespace catfacts
 
         public Sender() { }
 
-        public void GetCredentials()
+        public void GetCredentialsFromConsole()
         {
             // Get the username
             Console.Write("Username: ");
@@ -38,6 +38,11 @@ namespace catfacts
         public void Authenticate()
         {
             Google.Voice.Web.LoginResult loginResult = Voice.Login(Username, Password);
+
+            if (loginResult.RequiresRelogin)
+            {
+                throw new Exception("The username or password was incorrect");
+            }
         }
     }
 }
