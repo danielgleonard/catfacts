@@ -64,6 +64,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\images\Google-Voice.ico" />
+    <Content Include="History.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="libraries\Newtonsoft.Json.dll" />
     <Content Include="libraries\SharpVoice.dll" />
   </ItemGroup>

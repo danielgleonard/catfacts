@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Google.Voice;
+using System.IO;
 
 namespace catfacts
 {
@@ -12,7 +13,11 @@ namespace catfacts
         public  string  Username        { get; set; }
         public  string  Password        { get; set; }
 
+#if DEBUG
         private string  debugUsername   =   "crazyworkoutkid";
+        private string  debugNumber     =   "8477077458";
+#endif
+
         public  static  Google.Voice.GoogleVoice Voice { get; set; }
 
         public Sender() { }
@@ -48,8 +53,32 @@ namespace catfacts
             
             // Remove the password string from memory
             Password = "";
+        }
 
-
+        public void SendSMS(string number, string text)
+        {
+            try
+            {
+                Voice.SMS(number, text);
+                
+                try
+                {
+                    string record = "SMS: " + number + " - \"" + text + "\" at " + DateTime.Now;
+                    StreamWriter writer = File.AppendText("History.txt");
+                    writer.WriteLine(record);
+                    writer.Close();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                
+                Console.WriteLine("Message sent");
+            }
+            catch
+            {
+                throw new Exception("Bad number or null text or other idiotic error");
+            }
         }
     }
 }
