@@ -13,7 +13,7 @@ namespace catfacts
         public  string  Password        { get; set; }
 
         private string  debugUsername   =   "crazyworkoutkid";
-        public static Google.Voice.GoogleVoice Voice { get; set; }
+        public  static  Google.Voice.GoogleVoice Voice { get; set; }
 
         public Sender() { }
 
@@ -48,6 +48,8 @@ namespace catfacts
             
             // Remove the password string from memory
             Password = "";
+
+
         }
     }
 }
