@@ -10,6 +10,10 @@ namespace catfacts
     {
         private static Sender messageSender;
 
+#if DEBUG
+        private const string  debugNumber     =   "8477077458";
+#endif
+
         static void Main(string[] args)
         {
             // Set color of console
@@ -27,6 +31,17 @@ namespace catfacts
             // Run the stuff
             messageSender = new Sender();
             messageSender.GetCredentialsFromConsole();
+            messageSender.Authenticate();
+
+            // Send messages
+            string message = "";
+            while (message != "exit")
+            {
+                Console.Write("Your message:");
+                message = Console.ReadLine();
+                messageSender.SendSMS(debugNumber, message);
+                Console.WriteLine();
+            }
         }
     }
 }

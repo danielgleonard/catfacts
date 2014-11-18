@@ -14,11 +14,10 @@ namespace catfacts
         public  string  Password        { get; set; }
 
 #if DEBUG
-        private string  debugUsername   =   "crazyworkoutkid";
-        private string  debugNumber     =   "8477077458";
+        private const string  debugUsername   =   "crazyworkoutkid";
 #endif
 
-        public  static  Google.Voice.GoogleVoice Voice { get; set; }
+        public  static  GoogleVoice Voice = new GoogleVoice();
 
         public Sender() { }
 
