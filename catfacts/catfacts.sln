@@ -6,7 +6,6 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "catfacts", "catfacts.csproj", "{284B0635-6154-4090-A635-2CE002BD54C7}"
 	ProjectSection(ProjectDependencies) = postProject
 		{5391A007-087E-4BFF-8101-6F53F3220E61} = {5391A007-087E-4BFF-8101-6F53F3220E61}
-		{8D48CFE5-66E8-4287-86A5-BF631AC9FD24} = {8D48CFE5-66E8-4287-86A5-BF631AC9FD24}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Google.Voice", "..\Google.Voice.Service\Google.Voice.csproj", "{5391A007-087E-4BFF-8101-6F53F3220E61}"
