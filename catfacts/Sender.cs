@@ -9,49 +9,21 @@ using System.IO;
 namespace catfacts
 {
     class Sender
-    {
-        public  string  Username        { get; set; }
-        public  string  Password        { get; set; }
-
-#if DEBUG
-        private const string  debugUsername   =   "crazyworkoutkid";
-#endif
-
+    {        
         public  static  GoogleVoice Voice = new GoogleVoice();
 
         public Sender() { }
 
-        public void GetCredentialsFromConsole()
-        {
-            // Get the username
-            Console.Write("Username: ");
-#if DEBUG
-            // If in debug mode, use the debugUsername as the username
-            Username = debugUsername;
-            Console.WriteLine(Username);
-#else
-            // If in release mode, read password from console input
-            Username = Console.ReadLine();
-#endif
-
-            // Get the password
-            Console.Write("Password: ");
-            Password = Console.ReadLine();
-        }
-
-        public void Authenticate()
+        public void Authenticate(string username, string password)
         {
             // Got this from the example code
-            Google.Voice.Web.LoginResult loginResult = Voice.Login(Username, Password);
+            Google.Voice.Web.LoginResult loginResult = Voice.Login(username, password);
 
             // If there's an error, throw an exception
             if (loginResult.RequiresRelogin)
             {
                 throw new Exception("The username or password was incorrect");
             }
-            
-            // Remove the password string from memory
-            Password = "";
         }
 
         public void SendSMS(string number, string text)

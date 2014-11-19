@@ -9,9 +9,11 @@ namespace catfacts
     class CatFacts
     {
         private static Sender messageSender;
+        private static string[] credentials = new string[2];
 
 #if DEBUG
-        private const string  debugNumber     =   "8477077458";
+        private const   string  debugNumber     =   "8477077458";
+        private const   string  debugUsername   =   "crazyworkoutkid@gmail.com";
 #endif
 
         static void Main(string[] args)
@@ -30,8 +32,8 @@ namespace catfacts
 
             // Run the stuff
             messageSender = new Sender();
-            messageSender.GetCredentialsFromConsole();
-            messageSender.Authenticate();
+            credentials = GetCredentialsFromConsole();
+            messageSender.Authenticate(credentials[0], credentials[1]);
 
             // Send messages
             string message = "";
@@ -42,6 +44,28 @@ namespace catfacts
                 messageSender.SendSMS(debugNumber, message);
                 Console.WriteLine();
             }
+        }
+
+        private static string[] GetCredentialsFromConsole()
+        {
+            string[] credentials = new string[2];
+
+            // Get the username
+            Console.Write("Username: ");
+#if DEBUG
+            // If in debug mode, use the debugUsername as the username
+            credentials[0] = debugUsername;
+            Console.WriteLine(credentials[0]);
+#else
+            // If in release mode, read password from console input
+            Username = Console.ReadLine();
+#endif
+
+            // Get the password
+            Console.Write("Password: ");
+            credentials[1] = Console.ReadLine();
+
+            return credentials;
         }
     }
 }
