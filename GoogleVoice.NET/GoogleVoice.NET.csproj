@@ -137,7 +137,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Google-Voice.ico" />
-    <Content Include="History.txt" />
+    <Content Include="History.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\Google_Voice_Small.png" />
   </ItemGroup>
   <ItemGroup>
