@@ -35,16 +35,7 @@ namespace catfacts
             credentials = GetCredentialsFromConsole();
             messageSender.Authenticate(credentials[0], credentials[1]);
             Console.WriteLine();
-
-            // Send messages
-            string message = "";
-            while (message != "exit")
-            {
-                Console.Write("Your message:");
-                message = Console.ReadLine();
-                messageSender.SendSMS(debugNumber, message);
-                Console.WriteLine();
-            }
+            SendMessages();
         }
 
         private static string[] GetCredentialsFromConsole()
@@ -67,6 +58,26 @@ namespace catfacts
             credentials[1] = Console.ReadLine();
 
             return credentials;
+        }
+
+        private static void SendMessages()
+        {
+            string  message     =   "";
+            string  recipient   =   "";
+            while (message != "exit")
+            {
+                Console.Write("Your recipient:");
+#if DEBUG
+                recipient = debugNumber;
+                Console.WriteLine(recipient);
+#else
+                recipient = Console.Read();
+#endif
+                Console.Write("Your message:");
+                message = Console.ReadLine();
+                messageSender.SendSMS(debugNumber, message);
+                Console.WriteLine();
+            }
         }
     }
 }
