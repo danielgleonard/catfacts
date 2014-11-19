@@ -34,6 +34,7 @@ namespace catfacts
             messageSender = new Sender();
             credentials = GetCredentialsFromConsole();
             messageSender.Authenticate(credentials[0], credentials[1]);
+            Console.WriteLine();
 
             // Send messages
             string message = "";
