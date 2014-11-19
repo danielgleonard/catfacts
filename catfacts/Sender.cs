@@ -30,26 +30,28 @@ namespace catfacts
         {
             try
             {
-                Voice.SMS(number, text);
-                
-                try
-                {
-                    string record = "SMS: " + number + " - \"" + text + "\" at " + DateTime.Now;
-                    StreamWriter writer = File.AppendText("History.txt");
-                    writer.WriteLine(record);
-                    writer.Close();
-                }
-                catch (Exception)
-                {
-                    throw;
-                }
-                
+                Voice.SMS(number, text);                
                 Console.WriteLine("Message sent");
             }
             catch
             {
                 throw new Exception("Bad number or null text or other idiotic error");
             }
+        }
+
+        public string GetResourceTextFile(string filename)
+        {
+            string result = string.Empty;
+
+            using (System.IO.Stream stream = this.GetType().Assembly.
+                       GetManifestResourceStream("catfacts.assets." + filename))
+            {
+                using (System.IO.StreamReader sr = new System.IO.StreamReader(stream))
+                {
+                    result = sr.ReadToEnd();
+                }
+            }
+            return result;
         }
     }
 }

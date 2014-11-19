@@ -3,17 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace catfacts
 {
     class CatFacts
     {
-        private static Sender messageSender;
-        private static string[] credentials = new string[2];
+        private static  Sender      messageSender;
+        private static  string[]    credentials =   new string[2];
 
 #if DEBUG
-        private const   string  debugNumber     =   "8477077458";
-        private const   string  debugUsername   =   "crazyworkoutkid@gmail.com";
+        private static  string  debugNumber     =   "";
+        private static  string  debugUsername   =   "";
+        private static  string  debugPassword   =   "";
 #endif
 
         static void Main(string[] args)
@@ -25,13 +27,38 @@ namespace catfacts
 
             // Display title
             Console.Title = "CatFacts";
+#if DEBUG
+            Console.Title += " | DEBUG MODE";
+#endif
             Console.WriteLine("     CAT FACTS     ");
             Console.WriteLine("===================");
             Console.WriteLine("by CombustibleLemon");
             Console.Write("\n\n\n");
 
-            // Run the stuff
+            // Set up the message sender
             messageSender = new Sender();
+
+#if DEBUG
+            // Set up for debugging
+            XmlDocument doc = new XmlDocument();
+            doc.LoadXml(messageSender.GetResourceTextFile("debugValues.xml"));
+            XmlNode node = doc.SelectSingleNode("//values/email/text()");
+            debugUsername = node.Value;
+            node = doc.SelectSingleNode("//values/password/text()");
+            debugPassword = node.Value;
+            node = doc.SelectSingleNode("//values/number/text()");
+            debugNumber = node.Value;
+
+            if (debugUsername == "" || debugPassword == "" || debugNumber == "")
+            {
+                Console.WriteLine("You are in debug mode but don't have your debug settings set.");
+                Console.WriteLine("Open \"debugValues.xml\" and set them.");
+                Console.WriteLine("Make sure that the .gitignore will ignore your debug values!");
+                Console.ReadLine();
+                return;
+            }
+#endif
+
             credentials = GetCredentialsFromConsole();
             messageSender.Authenticate(credentials[0], credentials[1]);
             Console.WriteLine();
@@ -55,8 +82,16 @@ namespace catfacts
 
             // Get the password
             Console.Write("Password: ");
+#if DEBUG
+            credentials[1] = debugPassword;
+            for (int i = 0; i < debugPassword.Length; i++)
+            {
+                Console.Write("*");
+            }
+            Console.WriteLine();
+#else
             credentials[1] = Console.ReadLine();
-
+#endif
             return credentials;
         }
 
