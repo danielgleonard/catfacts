@@ -25,9 +25,9 @@
     <SupportUrl>http://danleonard.me/catfacts</SupportUrl>
     <TargetCulture>en-US</TargetCulture>
     <ProductName>CatFacts</ProductName>
-    <PublisherName>Daniel Leonard</PublisherName>
+    <PublisherName>Dan Leonard</PublisherName>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>3</ApplicationRevision>
     <ApplicationVersion>0.1.3.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -52,6 +52,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Release\catfacts.XML</DocumentationFile>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>assets\images\Google-Voice.ico</ApplicationIcon>
@@ -60,7 +61,7 @@
     <StartupObject>catfacts.CatFacts</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>B9B4BEEDF8F83FC9ECA8B6C982132287651E389E</ManifestCertificateThumbprint>
