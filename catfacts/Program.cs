@@ -42,14 +42,12 @@ namespace catfacts
             // Set up for debugging
             XmlDocument doc = new XmlDocument();
             doc.LoadXml(messageSender.GetResourceTextFile("debugValues.xml"));
-            XmlNode node = doc.SelectSingleNode("//values/email/text()");
-            debugUsername = node.Value;
-            node = doc.SelectSingleNode("//values/password/text()");
-            debugPassword = node.Value;
-            node = doc.SelectSingleNode("//values/number/text()");
-            debugNumber = node.Value;
+            XmlNode usernameNode    =   doc.SelectSingleNode("//values/email/text()");
+            XmlNode passwordNode    =   doc.SelectSingleNode("//values/password/text()");
+            XmlNode numberNode      =   doc.SelectSingleNode("//values/number/text()");
 
-            if (debugUsername == "" || debugPassword == "" || debugNumber == "")
+            // Kill the program if dev isn't ready for debug mode
+            if (usernameNode == null || passwordNode == null || numberNode == null)
             {
                 Console.WriteLine("You are in debug mode but don't have your debug settings set.");
                 Console.WriteLine("Open \"debugValues.xml\" and set them.");
@@ -57,8 +55,14 @@ namespace catfacts
                 Console.ReadLine();
                 return;
             }
+
+            // Set up variables if all is well
+            debugUsername = usernameNode.Value;
+            debugPassword = passwordNode.Value;
+            debugNumber = numberNode.Value;
 #endif
 
+            // Log in
             credentials = GetCredentialsFromConsole();
             messageSender.Authenticate(credentials[0], credentials[1]);
             Console.WriteLine();
