@@ -15,6 +15,14 @@ namespace catfacts_service
         public catfacts_service()
         {
             InitializeComponent();
+            eventLog1 = new System.Diagnostics.EventLog();
+            if (!System.Diagnostics.EventLog.SourceExists("MySource"))
+            {
+                System.Diagnostics.EventLog.CreateEventSource(
+                    "MySource", "MyNewLog");
+            }
+            eventLog1.Source = "MySource";
+            eventLog1.Log = "MyNewLog";
         }
 
         protected override void OnStart(string[] args)
