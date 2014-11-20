@@ -81,7 +81,7 @@ namespace catfacts
             Console.WriteLine(credentials[0]);
 #else
             // If in release mode, read password from console input
-            Username = Console.ReadLine();
+            credentials[0] = Console.ReadLine();
 #endif
 
             // Get the password
@@ -110,11 +110,11 @@ namespace catfacts
                 recipient = debugNumber;
                 Console.WriteLine(recipient);
 #else
-                recipient = Console.Read();
+                recipient = Console.ReadLine();
 #endif
                 Console.Write("Your message:");
                 message = Console.ReadLine();
-                messageSender.SendSMS(debugNumber, message);
+                messageSender.SendSMS(recipient, message);
                 Console.WriteLine();
             }
         }
