@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "catfacts", "catfacts.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Google.Voice", "..\Google.Voice.Service\Google.Voice.csproj", "{5391A007-087E-4BFF-8101-6F53F3220E61}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "catfacts-service", "..\catfacts-service\catfacts-service.csproj", "{AFBEB3FB-4266-447C-BD20-CE4612C022DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +26,10 @@ Global
 		{5391A007-087E-4BFF-8101-6F53F3220E61}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5391A007-087E-4BFF-8101-6F53F3220E61}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5391A007-087E-4BFF-8101-6F53F3220E61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFBEB3FB-4266-447C-BD20-CE4612C022DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFBEB3FB-4266-447C-BD20-CE4612C022DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFBEB3FB-4266-447C-BD20-CE4612C022DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFBEB3FB-4266-447C-BD20-CE4612C022DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
