@@ -1,5 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <values>
+  <!-- 
+    If you use this file, you MUST run the following git command or risk publishing your password.
+    ╔═════════════════════════════════════════════════════════════════════╗
+    ║$ git update-index --assume-unchanged catfacts/assets/debugValues.xml║
+    ╚═════════════════════════════════════════════════════════════════════╝
+  -->
   <email></email>
   <password></password>
   <number></number>
