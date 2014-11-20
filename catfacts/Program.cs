@@ -103,18 +103,32 @@ namespace catfacts
         {
             string  message     =   "";
             string  recipient   =   "";
+            int     loops       =   1;
             while (message != "exit")
             {
-                Console.Write("Your recipient:");
+                Console.Write("Your recipient: ");
 #if DEBUG
                 recipient = debugNumber;
                 Console.WriteLine(recipient);
 #else
                 recipient = Console.ReadLine();
 #endif
-                Console.Write("Your message:");
+                Console.Write("Your message: ");
                 message = Console.ReadLine();
-                messageSender.SendSMS(recipient, message);
+                Console.Write("Loop message (enter an integer): ");
+                loops = Convert.ToInt32(Console.ReadLine());
+
+                // SHITTY LOOPS INCOMING
+                DateTime time = DateTime.Now;
+                for (int i = 0; i < loops; i = i)
+                {
+                    if (time.AddSeconds(10 * i).CompareTo(DateTime.Now) <= 0)
+                    {
+                        messageSender.SendSMS(recipient, message);
+                        i++;
+                    }
+                }
+
                 Console.WriteLine();
             }
         }
