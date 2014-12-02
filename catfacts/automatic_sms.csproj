@@ -7,8 +7,8 @@
     <ProjectGuid>{284B0635-6154-4090-A635-2CE002BD54C7}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>catfacts</RootNamespace>
-    <AssemblyName>catfacts</AssemblyName>
+    <RootNamespace>automatic_sms</RootNamespace>
+    <AssemblyName>Auomatic SMS Sender</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
@@ -51,14 +51,14 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\catfacts.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\Auomatic SMS Sender.xml</DocumentationFile>
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>assets\images\Google-Voice.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>catfacts.CatFacts</StartupObject>
+    <StartupObject>automatic_sms.Automatic_sms</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>false</SignManifests>
