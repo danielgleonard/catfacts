@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Google.Voice;
 using System.IO;
 
-namespace catfacts
+namespace automatic_sms
 {
     class Sender
     {        
@@ -44,7 +44,7 @@ namespace catfacts
             string result = string.Empty;
 
             using (System.IO.Stream stream = this.GetType().Assembly.
-                       GetManifestResourceStream("catfacts.assets." + filename))
+                       GetManifestResourceStream("automatic_sms.assets." + filename))
             {
                 using (System.IO.StreamReader sr = new System.IO.StreamReader(stream))
                 {

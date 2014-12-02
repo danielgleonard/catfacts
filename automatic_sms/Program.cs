@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 
-namespace catfacts
+namespace automatic_sms
 {
-    class CatFacts
+    class Automatic_sms
     {
         private static  Sender      messageSender;
         private static  string[]    credentials =   new string[2];
@@ -26,7 +26,7 @@ namespace catfacts
             Console.Beep(10000, 2000);
 
             // Display title
-            Console.Title = "CatFacts";
+            Console.Title = "automatic_sms";
 #if DEBUG
             Console.Title += " | DEBUG MODE";
 #endif
