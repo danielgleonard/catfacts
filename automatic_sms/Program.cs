@@ -26,11 +26,11 @@ namespace automatic_sms
             Console.Beep(10000, 2000);
 
             // Display title
-            Console.Title = "automatic_sms";
+            Console.Title = "Automatic SMS Sender";
 #if DEBUG
             Console.Title += " | DEBUG MODE";
 #endif
-            Console.WriteLine("     CAT FACTS     ");
+            Console.WriteLine("   AUTOMATIC SMS   ");
             Console.WriteLine("===================");
             Console.WriteLine("by CombustibleLemon");
             Console.Write("\n\n\n");
