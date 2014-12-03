@@ -51,14 +51,8 @@ namespace automatic_sms
 
             // Get the username
             Console.Write("Username: ");
-#if DEBUG
-            // If in debug mode, use the debugUsername as the username
-            credentials[0] = debugUsername;
-            Console.WriteLine(credentials[0]);
-#else
             // If in release mode, read password from console input
             credentials[0] = Console.ReadLine();
-#endif
 
             // Get the password
             Console.Write("Password: ");
