@@ -56,16 +56,7 @@ namespace automatic_sms
 
             // Get the password
             Console.Write("Password: ");
-#if DEBUG
-            credentials[1] = debugPassword;
-            for (int i = 0; i < debugPassword.Length; i++)
-            {
-                Console.Write("*");
-            }
-            Console.WriteLine();
-#else
             credentials[1] = Console.ReadLine();
-#endif
             return credentials;
         }
 
