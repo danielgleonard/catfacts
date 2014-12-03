@@ -67,12 +67,7 @@ namespace automatic_sms
             while (message != "exit")
             {
                 Console.Write("Your recipient:");
-#if DEBUG
-                recipient = debugNumber;
-                Console.WriteLine(recipient);
-#else
                 recipient = Console.ReadLine();
-#endif
                 Console.Write("Your message:");
                 message = Console.ReadLine();
                 messageSender.SendSMS(recipient, message);
