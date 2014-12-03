@@ -12,12 +12,6 @@ namespace automatic_sms
         private static  Sender      messageSender;
         private static  string[]    credentials =   new string[2];
 
-#if DEBUG
-        private static  string  debugNumber     =   "";
-        private static  string  debugUsername   =   "";
-        private static  string  debugPassword   =   "";
-#endif
-
         static void Main(string[] args)
         {
             // Set color of console
