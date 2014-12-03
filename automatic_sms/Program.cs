@@ -38,30 +38,6 @@ namespace automatic_sms
             // Set up the message sender
             messageSender = new Sender();
 
-#if DEBUG
-            // Set up for debugging
-            XmlDocument doc = new XmlDocument();
-            doc.LoadXml(messageSender.GetResourceTextFile("debugValues.xml"));
-            XmlNode usernameNode    =   doc.SelectSingleNode("//values/email/text()");
-            XmlNode passwordNode    =   doc.SelectSingleNode("//values/password/text()");
-            XmlNode numberNode      =   doc.SelectSingleNode("//values/number/text()");
-
-            // Kill the program if dev isn't ready for debug mode
-            if (usernameNode == null || passwordNode == null || numberNode == null)
-            {
-                Console.WriteLine("You are in debug mode but don't have your debug settings set.");
-                Console.WriteLine("Open \"debugValues.xml\" and set them.");
-                Console.WriteLine("Make sure that the .gitignore will ignore your debug values!");
-                Console.ReadLine();
-                return;
-            }
-
-            // Set up variables if all is well
-            debugUsername = usernameNode.Value;
-            debugPassword = passwordNode.Value;
-            debugNumber = numberNode.Value;
-#endif
-
             // Log in
             credentials = GetCredentialsFromConsole();
             messageSender.Authenticate(credentials[0], credentials[1]);
